@@ -1,0 +1,38 @@
+name: ameya-conda-env
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.11
+  - pip>=23.3
+  - git
+  - cmake
+  - ninja
+  - pkg-config
+  - make
+  - gcc_linux-64    # for building flash-attn if wheels aren't available
+  - gxx_linux-64
+  - llvm-openmp     
+  - pip:
+      - torch==2.6.0
+      - transformers==4.49.0
+      - accelerate==1.4.0
+      - "trl @ git+https://github.com/huggingface/trl.git@69ad852e5654a77f1695eb4c608906fe0c7e8624"
+      - datasets>=3.2.0
+      - peft>=0.14.0
+      - vllm==0.8.5.post1
+      - deepspeed==0.15.4
+      - flash-attn
+      - bitsandbytes>=0.43.0
+      - huggingface_hub[cli]>=0.19.2,<1.0
+      - hf_transfer>=0.1.4
+      - safetensors>=0.3.3
+      - einops>=0.8.0
+      - sentencepiece>=0.1.99
+      - packaging>=23.0
+      - python-dotenv
+      - pandas>=2.2.2
+      - pyarrow>=15.0.0
+      - tqdm>=4.66.0
+      - wandb>=0.17.0
+      - ruff>=0.9.0
